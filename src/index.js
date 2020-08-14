@@ -1,17 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from './App'
+import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { history, configureStore } from "./store";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
-const store = configureStore();
+const store = configureStore().store;
+const persistor = configureStore().persistor;
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App history={history} />
+      <PersistGate loading={null} persistor={persistor}>
+        <App history={history} />
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

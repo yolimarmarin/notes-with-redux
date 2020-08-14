@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+.notes-main-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 50px;
+  justify-content: space-between;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.children-container{
+  width: 45%;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.all-notes-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.all-notes-container .note-container{
+  background-color: #dbe247;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 200px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.all-notes-container .note-title{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete-icon{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.edit-icon{
+  position: absolute;
+  bottom: 5px;
+  right: 35px;
+}
+
+.children-container .note-container{
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+
+.all-notes-container .note-title{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.children-text{
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+input, textarea{
+  border-radius: 10px;
+  padding: 5px;
+  width: 80%;
+  margin: 5px auto;
+}
+
+button{
+  width: 50%;
+  margin: 5px auto;
+  border-radius: 6px;
 }
